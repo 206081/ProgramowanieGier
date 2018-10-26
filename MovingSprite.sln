@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovingSprite", "MovingSprite\MovingSprite.csproj", "{BE79C060-F012-4FF6-BF72-909A6D9D765E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE79C060-F012-4FF6-BF72-909A6D9D765E}.Debug|x86.ActiveCfg = Debug|x86
+		{BE79C060-F012-4FF6-BF72-909A6D9D765E}.Debug|x86.Build.0 = Debug|x86
+		{BE79C060-F012-4FF6-BF72-909A6D9D765E}.Release|x86.ActiveCfg = Release|x86
+		{BE79C060-F012-4FF6-BF72-909A6D9D765E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B3E7157-BB67-4DD0-8C74-94518C3EDB30}
+	EndGlobalSection
+EndGlobal
