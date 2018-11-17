@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Michal/source/repos/ProgrmowanieGier3/ProgrmowanieGier3/Content/ground.png</SourceFile>
+  <SourceFile>C:/Users/Michal/source/repos/ProgramowanieGier3/ProgramowanieGier3/Content/ground.png</SourceFile>
   <SourceTime>2018-11-02T22:18:44.5494067+01:00</SourceTime>
-  <DestFile>C:/Users/Michal/source/repos/ProgrmowanieGier3/ProgrmowanieGier3/Content/bin/Windows/Content/ground.xnb</DestFile>
-  <DestTime>2018-11-02T22:19:52.0163264+01:00</DestTime>
+  <DestFile>C:/Users/Michal/source/repos/ProgramowanieGier3/ProgramowanieGier3/Content/bin/Windows/Content/ground.xnb</DestFile>
+  <DestTime>2018-11-15T17:51:23.1889126+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

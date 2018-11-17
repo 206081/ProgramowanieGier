@@ -68,8 +68,10 @@ namespace ProgramowanieGier3
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin();
             spriteBatch.Draw(texture, positionL, Color.White);
             spriteBatch.Draw(texture, positionR, Color.White);
+            spriteBatch.End();
         }
     }
 }

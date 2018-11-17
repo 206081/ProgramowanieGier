@@ -118,7 +118,9 @@ namespace ProgramowanieGier3.Models
 
         public void Draw(GraphicsDevice graphicsDevice, SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin();
             spriteBatch.Draw(texture, position, Color.White);
+            spriteBatch.End();
         }
 
         #region Collisions - BoundingBox

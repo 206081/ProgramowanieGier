@@ -17,7 +17,11 @@ namespace ProgramowanieGier3
         Sprite groundSprite;
         ScrollingBackground scrollingBackground;
         Player animatePlayer;
-
+        Player animatePlayer2;
+        Player animatePlayer3;
+        Effect shader;
+        Effect blankShader;
+        Effect rainbowShader;
         private List<Sprite> sprites;
 
         public Game1()
@@ -43,11 +47,12 @@ namespace ProgramowanieGier3
             scrollingBackground = new ScrollingBackground(backgroundTexture, new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight));
             groundTexture = Content.Load<Texture2D>("ground");
             groundSprite = new Sprite(groundTexture, new Vector2(0, graphics.GraphicsDevice.Viewport.Height - 50), GraphicsDevice);
-
-            animatePlayer = new Player(playerTexture, Vector2.Zero, 4, 6, GraphicsDevice);
-            
-
-
+            shader = Content.Load<Effect>("shader");
+            blankShader = Content.Load<Effect>("Blank");
+            rainbowShader = Content.Load<Effect>("Rainbow");
+            animatePlayer = new Player(playerTexture, Vector2.Zero, 4, 6, GraphicsDevice, shader);
+            animatePlayer2 = new Player(playerTexture, Vector2.Zero, 4, 6, GraphicsDevice, blankShader);
+            animatePlayer3 = new Player(playerTexture, new Vector2(50, 0), 4, 6, GraphicsDevice, rainbowShader);
         }
 
         protected override void Update(GameTime gameTime)
@@ -70,6 +75,7 @@ namespace ProgramowanieGier3
             foreach (var sprite in sprites)
             {
                 animatePlayer.IsCollidingWith(sprite);
+                
             }
 
             
@@ -79,8 +85,6 @@ namespace ProgramowanieGier3
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            spriteBatch.Begin();
 
             scrollingBackground.Draw(spriteBatch);
 
@@ -92,8 +96,8 @@ namespace ProgramowanieGier3
             }
 
             animatePlayer.Draw(GraphicsDevice, spriteBatch);
-
-            spriteBatch.End();
+            animatePlayer2.Draw(GraphicsDevice, spriteBatch);
+            animatePlayer3.Draw(GraphicsDevice, spriteBatch);
 
             base.Draw(gameTime);
         }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/Michal/source/repos/ProgramowanieGier3/ProgramowanieGier3/Content/File.fx</SourceFile>
+  <SourceTime>2018-11-16T18:30:34.2860354+01:00</SourceTime>
+  <DestFile>C:/Users/Michal/source/repos/ProgramowanieGier3/ProgramowanieGier3/Content/bin/Windows/Shader.xnb</DestFile>
+  <DestTime>2018-11-16T20:04:24.3804606+01:00</DestTime>
+  <Importer>EffectImporter</Importer>
+  <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
+  <Processor>EffectProcessor</Processor>
+  <ProcessorTime>2018-09-23T23:55:52+02:00</ProcessorTime>
+  <Parameters>
+    <Key>DebugMode</Key>
+    <Value>Auto</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

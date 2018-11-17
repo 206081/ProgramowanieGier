@@ -36,7 +36,8 @@ namespace ProgramowanieGier3.Models
         float jumpStrength = 6f;
         Vector2 momentum = Vector2.Zero;
 
-        public Player(Texture2D texture, Vector2 startingPosition, int numberOfAnimationRows, int animationFramesInRow, GraphicsDevice graphicsDevice) : base(texture, startingPosition, graphicsDevice)
+        Effect shader;
+        public Player(Texture2D texture, Vector2 startingPosition, int numberOfAnimationRows, int animationFramesInRow, GraphicsDevice graphicsDevice, Effect shader) : base(texture, startingPosition, graphicsDevice)
         {
             base.frameHeight = texture.Height / numberOfAnimationRows;
             base.frameWidth = texture.Width / animationFramesInRow;
@@ -44,7 +45,7 @@ namespace ProgramowanieGier3.Models
             this.numberOfAnimationRows = numberOfAnimationRows;
             this.animationFramesInRow = animationFramesInRow;
             boundingBox = new BoundingBox(new Vector3(position.X, position.Y, 0), new Vector3(position.X + frameWidth, position.Y + frameHeight, 0));
-
+            this.shader = shader;
         }
 
         new public void Update(GameTime gameTime)
@@ -75,23 +76,23 @@ namespace ProgramowanieGier3.Models
             if (pressedKeys.Length == 0)
             {
                 whichFrame = 0;
-                //currentWalkingDirection = WalkingDirection.down;
+                currentWalkingDirection = WalkingDirection.down;
             }
             else
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.A))
+                if (keyboardState.IsKeyDown(Keys.A))
                 {
                     if (!isTouchingLeft) movementVector += new Vector2(-movementSpeed, 0);
                     currentWalkingDirection = WalkingDirection.left;
                 }
 
-                else if (Keyboard.GetState().IsKeyDown(Keys.D))
+                else if (keyboardState.IsKeyDown(Keys.D))
                 {
                     if (!isTouchingRight) movementVector += new Vector2(movementSpeed, 0);
                     currentWalkingDirection = WalkingDirection.right;
                 }
 
-                if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                if (keyboardState.IsKeyDown(Keys.Space))
                     Jump();
 
                 position += movementVector;
@@ -126,7 +127,9 @@ namespace ProgramowanieGier3.Models
 
         new public void Draw(GraphicsDevice graphicsDevice, SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin(effect:shader);
             spriteBatch.Draw(texture, position, new Rectangle(whichFrame * base.frameWidth, base.frameHeight * (int)currentWalkingDirection, base.frameWidth, base.frameHeight), Color.White);
+            spriteBatch.End();
         }
 
         new public bool IsCollidingWith(Sprite sprite)
